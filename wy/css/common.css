@@ -1,0 +1,24 @@
+
+/* 产品介绍，关于我们公共区域 */
+.aboutme{
+  width:100%;
+  height: 129px;
+  text-align: center;
+  margin:0 auto;
+}
+.aboutme-center{
+padding-top: 49px;  
+display: flex;
+flex-direction: column;
+}
+.aboutme-center h1{
+  font-size: 24px;
+}
+.aboutme-center span:first-of-type{  
+  color:#666666;
+  margin-top: 10px;
+  background: url(../images/line1_07.gif) no-repeat 645px center,url(../images/line2_09.gif) no-repeat 790px center;
+}
+.aboutme-center span:last-of-type{
+  margin-top: 8px;
+}

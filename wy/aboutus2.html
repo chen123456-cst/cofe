@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/aboutus2.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./common/com.css">
+</head>
+
+<body>
+  <!--网页头部 -->
+  <header>
+    <!--  -->
+    <div class="nav-log ce">
+      <h1><img src="./images/logo_02.gif" alt="图片"></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" target="_blank">首页</a></li>
+          <li><a href="aboutus.html" target="_blank">关于我们</a></li>
+          <li><a href="prouduct.html" target="_blank">产品介绍</a></li>
+          <li><a href="contantus.html">我们团队</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- 轮播图 -->
+  <div class="slider">
+    <img src="./images/slider_02.gif" alt="图片">
+  </div>
+  <!-- 公司介绍中心 -->
+  <main>
+    <div class="company">
+      <div class="company_center">
+        <div class="title">
+          <!-- 左边标题 -->
+          <div class="left_title">
+            <div>
+              <h2 class="title1">公司简介</h2>
+              <span>Company profile</span>
+            </div>
+            <div>
+              <h2 class="title2">新闻中心</h2>
+              <span>Company profile</span>
+            </div>
+            <div>
+              <h2 class="title3">新闻历程</h2>
+              <span>Company profile</span>
+            </div>
+            <!-- 右边标题 -->
+            <div class="right_title">
+              <p>当前位置><span>首页>关于我们></span>公司简介</p>
+            </div>
+          </div>
+        </div>
+        <!-- 公司简介 -->
+        <div class="companyprofile">
+          <img src="./images/company_center_08.gif" alt="图片">
+          <p>
+            DUZU公司成立于1867年。19世纪60年代，从事药剂师工作的瑞士籍人亨利·内斯特尔（Henri Nestle）为不能享用母乳的婴儿配置了婴儿食品，发明了一育
+            儿用乳制品，即把果糖和营养剂加入奶粉中，是当时很优秀的育儿食品，但产量很少，它能起到代替母乳的作用，可以挽救不能食用母乳及其他代用品的婴儿，于
+            是一传十、十传百，逐渐被一些妈妈、助产士以及医生们所知晓。 Henri Nestle内斯特尔顺势在1867年创立了育儿奶粉公司， 以他的名字Nestle为其产品的品牌
+            名称，并以咖啡图案作为商标图形。
+          </p>
+          <p>
+            1905年，雀巢育儿奶粉公司与美国人办的另一食品公司合并，取名雀巢英瑞炼乳公司；1949年为另一家瑞士公司购进，改为现名雀巢食品公司。2015 年，B
+            lue Bottle 在东京开设了第一家位于日本的门店，仅一个月后第二家门店也随之开张。截至到 2016 年，Blue Bottle 在美国和日本的门店一共开了 29 家店，虽然
+            这一数字并不算多，但它的热度正在持续上升，Blue Bottle 计划2017年在美国和日本的门店数量将达到 55 家。
+          </p>
+        </div>
+        <!-- 新闻中心 -->
+        <div class="news_center">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- 网页底部 -->
+  <script>
+    var company_center = document.getElementsByClassName("company_center")[0];
+    // 绑定点击事件
+    company_center.onclick = function (e) {
+      e = e || window.event;
+      var target = e.target || e.srcElement;
+      if (target.nodeName == "H2" && target.className == "title1") {
+        var pro = document.getElementsByClassName("companyprofile")[0];
+        pro.style.display = "block";
+        pro.nextElementSibling.style.display = "none";
+      }
+      if (target.nodeName == "H2" && target.className == "title2") {
+        var news = document.getElementsByClassName("news_center")[0];
+        news.previousElementSibling.style.display = "none";
+        news.style.display = "block";
+      }
+    }
+    // 新闻页面建立AJAX
+    window.onload = function () {
+      var xhr = getXhr();
+      xhr.open("GET", "aboutus.php");
+      xhr.send(null);
+      xhr.onreadystatechange = function () {
+        // 接住后端数据的数组
+        var arr = [];
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // 获取后端从数据库中取出来的数据;
+          arr = eval(xhr.responseText);
+          for (var i = 0; i < arr.length; i++) {
+            // 获取大的div
+            var news1 = document.createElement("div");
+            news1.className = "news1";
+            var newsone = document.createElement("div");
+            newsone.className = "newsone";
+            news1.appendChild(newsone);
+            var data = document.createElement("div");
+            data.className = "data";
+            newsone.appendChild(data);
+            var p = document.createElement("p");
+            p.className = "p1";
+            p.innerHTML = arr[i][0].slice(-2).replace(".", "");
+            data.appendChild(p);
+            var span = document.createElement("span");
+            span.className = "span1";
+            span.innerHTML = arr[i][0].slice(0, 6);
+            data.appendChild(span);
+            var content = document.createElement("div");
+            content.className = "content";
+            newsone.appendChild(content);
+            var a = document.createElement("a");
+            a.setAttribute("c", i);
+            a.onclick = function () {
+              document.cookie = "num=" + this.getAttribute("c");
+            }
+            a.style.textDecoration = "none";
+            a.style.cursor = "pointer";
+            a.href = "newscenter.html";
+            a.className = "h2";
+            a.innerHTML = arr[i][1];
+            content.appendChild(a);
+            var p2 = document.createElement("p");
+            p2.className = "p2";
+            p2.innerHTML = arr[i][2];
+            content.appendChild(p2);
+            var news = document.getElementsByClassName("news_center")[0];
+            news.appendChild(news1);
+          }
+          arr.reverse();
+        }
+
+      }
+    }
+
+    // ajax 建立；
+    function getXhr() {
+      var xhr = null;
+      if (XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else {
+        xhr = new ActiveXObject("Mricsoft.XMLHttp");
+      }
+      return xhr;
+    }
+  </script>
+</body>
+
+</html>

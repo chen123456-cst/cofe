@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="././common/com.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/newscenter.css">
+</head>
+
+<body>
+  <!--  -->
+  <div class="nav-log ce">
+    <h1><img src="./images/logo_02.gif" alt="图片"></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_blank">首页</a></li>
+        <li><a href="aboutus.html" target="_blank">关于我们</a></li>
+        <li><a href="prouduct.html" target="_blank">产品介绍</a></li>
+        <li><a href="contantus.html">我们团队</a></li>
+        <li><a href="#">联系我们</a></li>
+      </ul>
+    </nav>
+  </div>
+  </header>
+  <!-- 轮播图 -->
+  <div class="slider">
+    <img src="./images/三级网页_02.gif" alt="图片">
+  </div>
+  <!-- 公司介绍中心 -->
+  <!-- 公司介绍中心 -->
+  <main>
+    <div class="company">
+      <div class="company_center">
+        <div class="title">
+          <!-- 左边标题 -->
+          <div class="left_title">
+            <div>
+              <h2 class="title3">新闻中心</h2>
+              <span>Company profile</span>
+            </div>
+            <!-- 右边标题 -->
+            <div class="right_title fr">
+              <p>当前位置><span>首页>关于我们></span>公司简介</p>
+            </div>
+          </div>
+        </div>
+        <!-- 公司简介 -->
+        <div class="companyprofile">
+          <h2 class="h2">
+            雀巢加强其在瑞士的科研能力
+          </h2>
+          <p class="p1">
+            摘要：Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。
+          </p>
+          <img src="./images/三级网页1_05.gif" alt="图片" class="img1">
+          <p class="p2">Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。</p>
+          <p class="p3">Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。</p>
+          <p class="p4">Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。</p>
+          <p class="p5">
+            Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。
+          </p>
+          <p class="p6">
+            Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。
+          </p>
+          <p class="p7">
+            Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。Duze宣布进一步加强其研发进度的变革,其研发业务在全球食品公司拥有庞大的规模。
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <main>
+    <script>
+      var num = document.cookie.split("=")[1];
+      console.log(num);
+      window.onload = function () {
+        var xhr = getXhr();
+        xhr.open("GET", "newscenter.php?num=" + num);
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+          if (xhr.status == 200 && xhr.readyState == 4) {
+            var arr = JSON.parse(xhr.responseText);
+            var div = document.getElementsByClassName("companyprofile")[0];
+            var h2 = document.createElement("h2");
+            h2.className = "h2";
+            h2.innerHTML = arr[0];
+            div.appendChild(h2);
+            var p1 = document.createElement("p");
+            p1.className = "p1";
+            p1.innerHTML = arr[1];
+            div.appendChild(p1);
+            var p2 = document.createElement("p");
+            p2.className = "p2";
+            p2.innerHTML = arr[2];
+            div.appendChild(p2);
+            var p3 = document.createElement("p");
+            p3.className = "p3";
+            p3.innerHTML = arr[3];
+            div.appendChild(p3);
+            var p4 = document.createElement("p");
+            p4.className = "p4";
+            p4.innerHTML = arr[4];
+            div.appendChild(p4);
+            var p5 = document.createElement("p");
+            p5.className = "p5";
+            p5.innerHTML = arr[5];
+            div.appendChild(p5);
+            var p6 = document.createElement("p");
+            p6.className = "p6";
+            p6.innerHTML = arr[6];
+            div.appendChild(p6);
+            var p7 = document.createElement("p");
+            p7.className = "p7";
+            p7.innerHTML = arr[7];
+            div.appendChild(p7);
+          }
+        }
+      }
+      // ajax 建立；
+      function getXhr() {
+        var xhr = null;
+        if (XMLHttpRequest) {
+          xhr = new XMLHttpRequest();
+        } else {
+          xhr = new ActiveXObject("Mricsoft.XMLHttp");
+        }
+        return xhr;
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+
+
+/* 关于我们 */
+
+/* 公司简介 */
+.company_profile{
+  height: 660px;
+  position: relative;
+}
+/* 左边 */
+.profile-left{
+  width: 392px;
+  height: 516px;
+  border: 1px solid #333333;
+  position: relative;
+  position: absolute;
+  top: 31px;
+  left:60px;
+}
+.profile-left img{
+ position: absolute;
+ left:14px;
+ bottom:14px;
+}
+/* 右边 */
+.profile-right{
+ width: 607px;;
+ height: 518px;
+ position: absolute;
+ top:31px;
+ left:508px;
+}
+.profile-right h2{
+  margin-top: 15px;
+  font-size: 24px;
+  color:#3a3438;
+}
+.profile-right span:first-of-type img{
+  margin-top: 34px;
+}
+.profile-right .content{
+  margin-top: 37px;
+  font-size: 12px;
+  text-indent:32px;
+ 
+  
+}
+.profile-right .content p{
+  color:#3a3438; 
+  font-size: 15px;
+  line-height: 29px;
+}
+.content p:last-of-type{
+  margin-top: 13.5px;
+}
+/* 产品列表 */
+.imglist{
+  height: 479px;
+  display: flex;
+}
+.imgbox{
+  text-align: center;
+  width: 327px;
+  height: 434px;
+  padding:0 33.5px;
+  padding-top: 45px;
+  position: relative;
+}
+.imgbox div{
+  width:327px;
+  height: 298px;
+  background-color:gray;
+  opacity: 0;
+  position: absolute;
+  top:45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.imgbox a:hover{
+  text-decoration: none;
+}
+.imgbox div span{
+  font-size: 64px;
+  color: #fff;
+}
+.imgbox:hover div{
+  opacity: 0.3;
+}
+.imgbox:hover h2{
+  color:#333333;
+}
+.imgbox:hover p{
+  color:#333333;
+}
+.imgbox h2{
+  font-size: 22px;
+  color:#666666;
+  margin-top: 17px;
+}
+.imgbox p{
+  color:#a1a1a1;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* 网页中间图片 */
+.slider-content{
+  width: 100%;
+}
+.slider-content img{
+  width:100%;
+}
+/* 公司团队介绍 */
+.our_team_content{
+  height: 552px;
+  margin-top: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+}
+.team_box{
+  width: 245px;
+  height: 507px;
+  margin-top: 40px;
+ border: 1px solid #666;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ position: relative;
+}
+.imgbox1 ,.imgbox2{
+  width:100%;
+  height: 100%;
+  display: flex;
+   flex-direction: column;
+}
+.imgbox1  span{
+  font-size: 20px;
+  color:#666;
+}
+.imgbox1 span:first-of-type{
+  margin-top: 29px;
+ 
+}
+.imgbox1 span:last-of-type{
+  margin-top: 10px;
+}
+
+.imgbox2{
+  position: absolute;
+  top:0;
+  background-color:#3b3b3b;
+  opacity: 0;
+  transition: all 3s;
+}
+.imgbox2 span{
+  color:white;
+  font-size: 20px;
+}
+.imgbox2 span:first-of-type{
+  margin-top: 9px;
+  
+}
+.imgbox2 span:last-of-type{
+  font-size: 12px;
+  margin-top: 13px;
+  margin-left: 43px;
+}
+.team_box:hover .imgbox2{
+  opacity: 2;
+}
+.imgbox2 span:nth-of-type(2){
+  width:30px;
+  height:2px;
+  margin-left: 114px;
+  margin-top: 9px;
+  background:#fff;
+}
+/* 联系我们 */
+.telephone{
+ margin-top: 108px; 
+}
+.telephone_content{
+  height: 399px;
+  display: flex;
+  margin-top: 28px;
+}
+.telephone_content_left{
+  margin-top: 28px;
+  width:662px;
+  height: 344px;
+  margin-left: 63px;
+}
+.telephone_content_right{
+  margin-top: 28px;
+  width: 330px;
+  height: 338px;
+  margin-left: 56px;
+}
+.telephone_content_right div{
+  height:95px;
+  position: relative;
+}
+.telephone_content_right div:last-of-type,
+.telephone_content_right div:nth-of-type(2){
+  margin-top: 27px;
+}
+.telephone_content_right div h2{
+  font-size: 18px;
+  position: absolute;
+  top:0;
+  left:50px;
+}
+.telephone_content_right div span:nth-of-type(2){
+  color:#999999;
+ position: absolute;
+ top:30px;
+}
+.telephone_content_right div span:nth-of-type(3){
+position: absolute;
+top:59px;
+font-size: 13px;
+color:#333333;
+}
+.telephone_content_right div span:nth-of-type(4){
+  position: absolute;
+  top:83px;
+  color:#c6c6c6;
+}
+

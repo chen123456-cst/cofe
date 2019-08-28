@@ -1,0 +1,23 @@
+
+/* 联系我们标题 */
+.nav div span{
+color:#999;
+}
+.nav p{
+  margin-left: 741px;
+}
+.gps{
+  width:996px;
+  height:582px;
+  margin:0 auto;
+}
+.gps img{
+  margin-top: 20px;
+  width:100%;
+  height:340px;
+}
+.gps_center{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
